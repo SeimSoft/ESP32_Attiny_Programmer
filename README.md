@@ -27,12 +27,12 @@ Das Skript `esp.py` implementiert das serielle ISP-Protokoll (In-System-Programm
 
 ```mermaid
 flowchart LR
-    ESP32_8[ESP32 GPIO8] -->|SCK| ATTINY_SCK[ATtiny13 SCK]
-    ESP32_10[ESP32 GPIO10] -->|MOSI| ATTINY_MOSI[ATtiny13 MOSI]
-    ESP32_9[ESP32 GPIO9] -->|MISO| ATTINY_MISO[ATtiny13 MISO]
-    ESP32_20[ESP32 GPIO20] -->|RESET| ATTINY_RESET[ATtiny13 RESET]
-    ESP32_VCC[ESP32 3.3V] -->|VCC| ATTINY_VCC[ATtiny13 VCC]
-    ESP32_GND[ESP32 GND] -->|GND| ATTINY_GND[ATtiny13 GND]
+    ESP32[ESP32] ---|SCK (GPIO8)| ATTINY[ATtiny13]
+    ESP32 ---|MOSI (GPIO10)| ATTINY
+    ESP32 ---|MISO (GPIO9)| ATTINY
+    ESP32 ---|RESET (GPIO20)| ATTINY
+    ESP32 ---|VCC (3.3V)| ATTINY
+    ESP32 ---|GND| ATTINY
 ```
 
 ## Nutzung
