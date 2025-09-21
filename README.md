@@ -13,6 +13,16 @@ Das Skript `esp.py` implementiert das serielle ISP-Protokoll (In-System-Programm
 
 ## Schaltplan / Pinbelegung
 
+```mermaid
+flowchart LR
+    ESP32[ESP32] -->|SCK| ATTINY[ATtiny13]
+    ESP32 -->|MOSI| ATTINY
+    ESP32 -->|MISO| ATTINY
+    ESP32 -->|RESET| ATTINY
+    ESP32 -->|VCC| ATTINY
+    ESP32 -->|GND| ATTINY
+```
+
 | ATtiny13 Pin | Funktion | ESP32 Pin (im Skript) |
 |-------------|----------|-----------------------|
 | RESET       | Reset    | GPIO20                |
@@ -23,17 +33,6 @@ Das Skript `esp.py` implementiert das serielle ISP-Protokoll (In-System-Programm
 
 > **Hinweis:** Die verwendeten GPIOs können je nach ESP32-Modell variieren. Passe ggf. die Pin-Nummern in `esp.py` an.
 
-### Verdrahtung (Mermaid-Diagramm)
-
-```mermaid
-flowchart LR
-    ESP32[ESP32] -->|SCK| ATTINY[ATtiny13]
-    ESP32 -->|MOSI| ATTINY
-    ESP32 -->|MISO| ATTINY
-    ESP32 -->|RESET| ATTINY
-    ESP32 -->|VCC| ATTINY
-    ESP32 -->|GND| ATTINY
-```
 
 ## Nutzung
 1. **Verkabelung:**
