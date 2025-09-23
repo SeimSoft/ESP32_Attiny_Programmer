@@ -1,5 +1,5 @@
-MCU = attiny13a
-F_CPU = 9600000
+MCU = attiny13
+F_CPU = 9800000
 SRC = main.c
 TARGET = main
 
